@@ -18,15 +18,21 @@ const dob = document.getElementById("dob");
 
 // }); 
 
-dob.addEventListener("change", () => {
-    let currentYear = new Date().getFullYear();
-    let birthYear = new Date(dob.value);
-    if(birthYear.valueOf()){
-        let years = birthYear.getFullYear();
-        console.log(currentYear - years);
-        
-    }
-})
+try {
+    dob.addEventListener("change", () => {
+        let currentYear = new Date().getFullYear();
+        let birthYear = new Date(dob.value);
+        if(birthYear.valueOf()){
+            let years = birthYear.getFullYear();
+            console.log(currentYear - years);
+            
+        }
+    })
+    
+} catch (error) {
+    
+}
+
 
 // form.addEventListener("submit", (event) =>{
 
