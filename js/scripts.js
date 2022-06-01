@@ -1,12 +1,25 @@
 const preloader = document.querySelector('.preloader')
+
+$('#dob').dateDropper({
+    lock:false,
+    init_animation:"fadein",
+    animate:true,
+    dropBackgroundColor:"#800080",
+    dropPrimaryColor:"#800080",
+    dropWidth: 124,
+
+
+}); 
+
 window.addEventListener('load', () => {
     preloader.classList.add('loaded')
 
-})
+});
+
 window.addEventListener('DOMContentLoaded', event => {
 
 
-    preloader.classList.add('loaded')
+   
     
     // Navbar shrink function
     var navbarShrink = function () {
