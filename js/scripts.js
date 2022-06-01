@@ -1,15 +1,44 @@
 const preloader = document.querySelector('.preloader')
 
-$('#dob').dateDropper({
-    lock:false,
-    init_animation:"fadein",
-    animate:true,
-    dropBackgroundColor:"#800080",
-    dropPrimaryColor:"#800080",
-    dropWidth: 124,
+const form = document.querySelector("#form");
+
+const dob = document.getElementById("dob");
 
 
-}); 
+
+
+// $('#dob').dateDropper({
+//     lock:false,
+//     init_animation:"fadein",
+//     animate:true,
+//     dropBackgroundColor:"#800080",
+//     dropPrimaryColor:"#800080",
+//     dropWidth: 124,
+
+
+// }); 
+
+dob.addEventListener("change", () => {
+    let currentYear = new Date().getFullYear();
+    let birthYear = new Date(dob.value);
+    if(birthYear.valueOf()){
+        let years = birthYear.getFullYear();
+        console.log(currentYear - years);
+        
+    }
+})
+
+// form.addEventListener("submit", (event) =>{
+
+
+//     //validate dob to be above 21
+
+//     event.preventDefault();
+
+// });
+
+
+
 
 window.addEventListener('load', () => {
     preloader.classList.add('loaded')
