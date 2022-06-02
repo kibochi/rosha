@@ -3,20 +3,31 @@ const preloader = document.querySelector('.preloader')
 const form = document.querySelector("#form");
 
 const dob = document.getElementById("dob");
+const tops = document.querySelector('.top')
+
+window.onscroll = function() {
+    let top = window.scrollY
 
 
 
-
-// $('#dob').dateDropper({
-//     lock:false,
-//     init_animation:"fadein",
-//     animate:true,
-//     dropBackgroundColor:"#800080",
-//     dropPrimaryColor:"#800080",
-//     dropWidth: 124,
+    if (top >= 100) {
+        tops.style = 'Display:block'
+    } else {
+        tops.style = 'Display:none'
+    }
+}
 
 
-// }); 
+$('#dob').dateDropper({
+    lock:false,
+    init_animation:"fadein",
+    animate:true,
+    dropBackgroundColor:"#800080",
+    dropPrimaryColor:"#800080",
+    dropWidth: 124,
+
+
+}); 
 
 try {
     dob.addEventListener("change", () => {
