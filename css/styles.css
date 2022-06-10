@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
   position: relative;
   overflow-x: hidden;
 }
@@ -54,13 +55,14 @@ p {
 }
 
 .preloader{
-     position: fixed;
-     top: 0;
-     left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     background: white;
     text-align: center;
+    z-index: 10000;
     
     display: grid;
     place-items: center;
@@ -97,15 +99,20 @@ height:100%!important;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 700;
+  width: 60px;
+  height:60px;
+  border-radius: 50%;
+  border-color: #ffffff;
 }
 #mainNav a{
-  color: red;
+  color: #FE0944;
   font-family: 'Berkshire Swash', cursive;
   font-weight: 700;
   letter-spacing: 3px;
   font-size: 100x;
   
 }
+
 /* #mainNav .navbar-brand img {
   width: 100px;
   height: 150px;
@@ -160,12 +167,11 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+  
+
+height: 70vh;
+border-bottom-left-radius:30px ;
+
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -202,16 +208,42 @@ header.masthead .masthead-heading {
 }
 
 
-.services-images:hover{
-  border: 1px solid black;
-  background-color: whitesmoke;
+
+
+.services-images .card{
+  
+  margin-top: 30px;
+
+  
 }
 
-.services-images:hover{
 
 
-transition: background-color .7s ease-in-out;
+.services-images .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  background-color: #feae96;
+  background-image: linear-gradient(230deg, #feae96 22%, #fe0944 155%);
+  color: white;
 
+}
+
+.middle{
+  margin-top: 30px;
+  transform: scaleY(1.1);
+}
+@media (min-width: 768px) {
+  .services-images .card{
+    margin-top:30px;
+  }
+  
+  .services-images .card:nth-child(2){
+    margin-top: 0 !important;
+  }
+  
+}
+
+.btn-join{
+  border: 1px solid #fe0944 ;
 }
 
 /* CSS */
@@ -260,7 +292,7 @@ transition: background-color .7s ease-in-out;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #800080;
+  background-color: red;
   transform-origin: bottom center;
   transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
@@ -463,6 +495,18 @@ transition: background-color .7s ease-in-out;
 .timeline .timeline-body > p {
   margin-bottom: 0;
 }
+.about-us-image {
+  background: url('assets/img/about-us.svg');
+  
+  background-attachment: fixed;
+  min-width: 500px;
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  height: auto;
+  
+
+}
 
 @media (min-width: 768px) {
   .timeline:before {
@@ -586,8 +630,8 @@ iframe{
 }
 
 .form-control:focus {
-  border-color: purple !important;
-  box-shadow: 0 0 0 0.1rem rgb(128,0,128 );
+  border-color: red !important;
+  box-shadow: 0 0 0 0.1rem red;
   outline: 0 none !important;
 }
 .footer {

@@ -3,7 +3,16 @@ const preloader = document.querySelector('.preloader')
 const form = document.querySelector("#form");
 
 const dob = document.getElementById("dob");
-const tops = document.querySelector('.top')
+const tops = document.querySelector('.top');
+
+const toggler = document.querySelector(".navbar-toggler");
+
+const collapse = document.querySelector(".navbar-nav");
+
+toggler.addEventListener("click", (e)=>{
+
+collapse.classList.toggle("navbar-collapse");
+})
 
 window.onscroll = function() {
     let top = window.scrollY
@@ -57,7 +66,7 @@ try {
 
 
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded')
 
 });
